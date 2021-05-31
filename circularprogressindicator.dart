@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-   runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -36,13 +36,28 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-            _defaultSizeCircularIndicator(),
-            _customSizeCircularProgressIndicator(),
-          ])),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: const Text(
+              'Default size indeterminant circular progress',
+            )),
+        _defaultSizeCircularIndicator(),
+        Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: const Text(
+              'Custom size indeterminant circular progress',
+            )),
+        _customSizeCircularProgressIndicator(),
+        Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: const Text(
+              'Custom size determinant circular progress showing 50% completion',
+              textAlign: TextAlign.center,
+            )),
+        _customSizeDeterminantCircularProgressIndicator(),
+      ])),
     );
   }
 
@@ -66,6 +81,19 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.redAccent,
               valueColor: AlwaysStoppedAnimation(Colors.green),
               strokeWidth: 5,
+            )));
+  }
+
+  Widget _customSizeDeterminantCircularProgressIndicator() {
+    return Container(
+        margin: const EdgeInsets.all(20.0),
+        child: const SizedBox(
+            width: 100.0,
+            height: 100.0,
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.grey,
+              strokeWidth: 5,
+              value: 0.5,
             )));
   }
 }
