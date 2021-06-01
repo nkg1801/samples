@@ -22,16 +22,16 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() =&gt; _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      <mark>backgroundColor: Colors.green,</mark>
-      <mark>appBar: AppBar(title: Text('I am learning flutter')),</mark>
-      <mark>body: Text('My flutter app'),</mark>
+      backgroundColor: Colors.green,
+      appBar: AppBar(title: Text('I am learning flutter')),
+      body: Text('My flutter app'),
     );
   }
 }
