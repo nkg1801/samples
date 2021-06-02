@@ -25,10 +25,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() =&gt; _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
+class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   @override
