@@ -39,8 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
           margin: const EdgeInsets.only(top:40),
           child: Column(
-
-            //mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text('Car Widget Demo',style: TextStyle(fontSize: 26)),
               _cardWidget(),
