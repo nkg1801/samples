@@ -40,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 DecoratedBox(decoration: BoxDecoration(color: Colors.red,)),
             ),
 
-            <mark>// 2nd Child - this invisible SizedBox and being used here just for vertical spacing.</mark>
-            <mark>// Remember a SizedBox without any child is invisible but it still occupies space.</mark>
+            // 2nd Child - this invisible SizedBox and being used here just for vertical spacing.
+            // Remember a SizedBox without any child is invisible but it still occupies space.
             
             SizedBox(height: 10,),
 
@@ -51,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
                  DecoratedBox(decoration: BoxDecoration(color: Colors.green,))
             ),
 
-            <mark>// 4th Child - this invisible SizedBox and being used here just for vertical spacing.</mark>
-            <mark>// Remember a SizedBox without any child is invisible but it still occupies space.</mark>
+            // 4th Child - this invisible SizedBox and being used here just for vertical spacing.
+            // Remember a SizedBox without any child is invisible but it still occupies space.
             
             SizedBox(height: 10,),
 
