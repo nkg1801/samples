@@ -31,8 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(title: Text('SizedBox demo')),
       body:
-        <mark>SizedBox(width: 100.0, height: 100.0,
-          child: DecoratedBox(decoration: BoxDecoration(color: Colors.red))</mark>
+        SizedBox(width: 100.0, height: 100.0,
+          child: DecoratedBox(decoration: BoxDecoration(color: Colors.red))
     ),
     );
   }
