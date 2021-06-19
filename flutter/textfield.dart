@@ -12,70 +12,73 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'TextField widget demo'),
+      home: const MyHomePage(title: 'TextField widget demo'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  _MyHomePageState createState() =&gt; _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
-  bool _isNameEmpty = false;
+class _MyHomePageState extends State<MyHomePage> {
+  final bool _isNameEmpty = false;
+
   @override
   Widget build(BuildContext context) {
-
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body:
-        _formWidget()
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: _formWidget());
   }
 
-  _formWidget()
-  {
-    return new
-    Padding(
-      padding: EdgeInsets.all(10),
-      child:
-
-    Column(children: [
-
-      TextField(
-        decoration: InputDecoration(labelText: 'Your ID'),
-      ),
-
-      SizedBox(height: 30,),
-
-      new TextField(
-        decoration: InputDecoration(
-            labelText: 'Name',
-          errorText: _isNameEmpty ? 'Please input your name' : null,
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:Colors.green)),
-          prefixIcon: IconButton(icon: Icon(Icons.person)),
-          suffixIcon: IconButton(icon: Icon(Icons.clear)),
-        ),
-      ),
-
-      SizedBox(height: 20,),
-
-      TextField(
-        decoration: InputDecoration(labelText: 'Address',
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:Colors.green)),
-        suffixIcon: IconButton(icon:Icon(Icons.clear),),
-        ),
-      ),
-    ],
-    )
-    );
+  _formWidget() {
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            const TextField(
+              decoration: InputDecoration(labelText: 'Your ID'),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Name',
+                errorText: _isNameEmpty ? 'Please input your name' : null,
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue)),
+                enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green)),
+                prefixIcon:
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+                suffixIcon:
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.clear)),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Address',
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue)),
+                enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green)),
+                suffixIcon: IconButton(
+                  onPressed: (){},
+                  icon: const Icon(Icons.clear),
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 }
